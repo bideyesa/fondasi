@@ -1,0 +1,113 @@
+@use 'sass:math';
+
+// ══════════════════════════════════════════════
+// Box Sizing
+// ══════════════════════════════════════════════
+
+.box-border {
+    box-sizing: border-box;
+}
+
+.box-content {
+    box-sizing: content-box;
+}
+
+// ══════════════════════════════════════════════
+// Overflow
+// ══════════════════════════════════════════════
+
+.overflow-auto {
+    overflow: auto;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.overflow-visible {
+    overflow: visible;
+}
+
+.overflow-scroll {
+    overflow: scroll;
+}
+
+.overflow-x-auto {
+    overflow-x: auto;
+}
+
+.overflow-x-hidden {
+    overflow-x: hidden;
+}
+
+.overflow-x-visible {
+    overflow-x: visible;
+}
+
+.overflow-x-scroll {
+    overflow-x: scroll;
+}
+
+.overflow-y-auto {
+    overflow-y: auto;
+}
+
+.overflow-y-hidden {
+    overflow-y: hidden;
+}
+
+.overflow-y-visible {
+    overflow-y: visible;
+}
+
+.overflow-y-scroll {
+    overflow-y: scroll;
+}
+
+.overflow-clip {
+    overflow: clip;
+}
+
+.overflow-x-clip {
+    overflow-x: clip;
+}
+
+.overflow-y-clip {
+    overflow-y: clip;
+}
+
+// ══════════════════════════════════════════════
+// Aspect Ratio
+// ══════════════════════════════════════════════
+
+.aspect-auto {
+    aspect-ratio: auto;
+}
+
+.aspect-square {
+    aspect-ratio: 1 / 1;
+}
+
+.aspect-video {
+    aspect-ratio: 16 / 9;
+}
+
+.aspect-portrait {
+    aspect-ratio: 3 / 4;
+}
+
+.aspect-landscape {
+    aspect-ratio: 4 / 3;
+}
+
+@for $i from 1 through 10 {
+    .aspect-#{$i}\/#{$i} {
+        aspect-ratio: math.div($i, $i);
+    }
+}
+
+@for $i from 1 through 20 {
+    .aspect-#{$i} {
+        aspect-ratio: $i;
+    }
+}

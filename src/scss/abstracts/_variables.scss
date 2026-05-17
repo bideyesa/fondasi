@@ -1,0 +1,233 @@
+// ══════════════════════════════════════════════
+// Fondasi Design System Variables
+// Professional, Formal, Minimalist
+// ══════════════════════════════════════════════
+
+// Colors - Navy based brand
+$navy: (
+    '50':  #f0f2f8,
+    '100': #d9dfe9,
+    '200': #b3bfd3,
+    '300': #8d9fbc,
+    '400': #6680a5,
+    '500': #3f6089,
+    '600': #2a4a72,
+    '700': #1e3a5f,
+    '800': #132a4a,
+    '900': #0a1b32,
+    '950': #050e1c
+);
+
+$neutral: (
+    '50':  #f8f8f7,
+    '100': #f0eeec,
+    '200': #e4e1dd,
+    '300': #ccc9c3,
+    '400': #aaa69f,
+    '500': #88837b,
+    '600': #686360,
+    '700': #4e4a47,
+    '800': #35322f,
+    '900': #1e1c1a
+);
+
+// Semantic Colors - More muted, professional
+$semantic: (
+    'success': (
+        'default':  #2d8a4e,
+        'bg':       #edf7f2,
+        'text':     #1f6b3a,
+        'border':   #b4dcc1
+    ),
+    'warning': (
+        'default':  #c7810e,
+        'bg':       #fef5e6,
+        'text':     #8a5a08,
+        'border':   #f0d78c
+    ),
+    'danger': (
+        'default':  #c42b2b,
+        'bg':       #fdf2f2,
+        'text':     #8b1e1e,
+        'border':   #e8b8b8
+    ),
+    'info': (
+        'default':  #2563a8,
+        'bg':       #eef4fb,
+        'text':     #1a4578,
+        'border':   #b8d0e3
+    )
+);
+
+// Surface colors - Clean, subtle
+$surface: (
+    'bg':     #fafaf9,
+    'surface': #ffffff,
+    '2':      #f6f5f4,
+    '3':      #efeeed,
+    '4':      #e5e4e2
+);
+
+$border-colors: (
+    'default':  #e0ddd9,
+    'strong':   #c9c5c1,
+    'subtle':   #ebe9e7
+);
+
+$text-colors: (
+    'default': #1a1816,
+    '2':       #44403c,
+    '3':       #78716c,
+    '4':       #a8a29e,
+    'inv':     #ffffff
+);
+
+// Brand - Refined navy
+$brand: (
+    'default':   #1e3a5f,
+    'dark':      #152a45,
+    'darker':    #0d1c2e,
+    'light':     #e8eef4,
+    'mid':       #94a8c2,
+    'text':      #1e3a5f,
+    'accent':    #2563eb,
+    'rgb':       '30, 58, 95'
+);
+
+// Font Families
+$font-families: (
+    'sans':  'IBM Plex Sans, system-ui, -apple-system, sans-serif',
+    'serif': 'Libre Baskerville, Georgia, serif',
+    'mono':  'IBM Plex Mono, ui-monospace, monospace'
+);
+
+// Font Sizes - Compact but readable
+$font-sizes: (
+    'xs':   0.6875rem,  // 11px - small labels
+    'sm':   0.75rem,    // 12px - secondary text
+    'base': 0.875rem,   // 14px - body text
+    'md':   1rem,       // 16px - headings
+    'lg':   1.125rem,   // 18px - h4
+    'xl':   1.25rem,    // 20px - h3
+    '2xl':  1.5rem,     // 24px - h2
+    '3xl':  1.875rem,   // 30px - h1
+    '4xl':  2.25rem     // 36px - hero
+);
+
+// Line Heights - Tight for readability
+$line-heights: (
+    'tight':  1.25,
+    'normal': 1.5,
+    'loose':  1.75
+);
+
+// Letter Spacing
+$letter-spacing: (
+    'tight':   -0.01em,
+    'normal':   0,
+    'wide':     0.025em,
+    'wider':    0.05em,
+    'widest':   0.1em
+);
+
+// Font Weights
+$font-weights: (
+    'light':   300,
+    'normal':  400,
+    'medium':  500,
+    'semi':    600,
+    'bold':    700
+);
+
+// Spacing - Balanced system
+$spacing: (
+    '0':  0,
+    '1':  0.25rem,   // 4px
+    '2':  0.5rem,    // 8px
+    '3':  0.75rem,   // 12px
+    '4':  1rem,      // 16px
+    '5':  1.25rem,   // 20px
+    '6':  1.5rem,    // 24px
+    '8':  2rem,      // 32px
+    '10': 2.5rem,    // 40px
+    '12': 3rem,      // 48px
+    '16': 4rem,      // 64px
+    '20': 5rem,      // 80px
+    '24': 6rem       // 96px
+);
+
+// Border Radius - Subtle, professional
+$radius: (
+    'none': 0px,
+    'xs':   2px,
+    'sm':   3px,
+    'md':   4px,
+    'lg':   6px,
+    'xl':   8px,
+    '2xl':  12px,
+    'pill': 9999px,
+    'full': 9999px
+);
+
+// Shadows - Minimal, barely-there
+$shadows: (
+    'xs':    0 1px 2px  rgba(0, 0, 0, 0.03),
+    'sm':    0 1px 3px  rgba(0, 0, 0, 0.04),
+    'md':    0 2px 6px  rgba(0, 0, 0, 0.05),
+    'lg':    0 4px 12px rgba(0, 0, 0, 0.07),
+    'xl':    0 8px 24px rgba(0, 0, 0, 0.09),
+    '2xl':   0 16px 48px rgba(0, 0, 0, 0.11),
+    'inner': inset 0 1px 2px rgba(0, 0, 0, 0.04)
+);
+
+// Z-Index
+$z-index: (
+    'base':     0,
+    'raised':   10,
+    'dropdown': 100,
+    'sticky':   200,
+    'overlay':  300,
+    'modal':    400,
+    'toast':    500,
+    'tooltip':  600
+);
+
+// Transitions - Fast, smooth
+$transitions: (
+    'fast':   100ms ease,
+    'base':   150ms ease,
+    'slow':   200ms ease,
+    'slower': 300ms ease
+);
+
+$durations: (
+    'fast':    100ms,
+    'base':    150ms,
+    'slow':    200ms,
+    'slower':  300ms
+);
+
+$easings: (
+    'default': ease,
+    'in':      ease-in,
+    'out':     ease-out,
+    'in-out':  ease-in-out
+);
+
+// Breakpoints
+$breakpoints: (
+    'sm': 640px,
+    'md': 768px,
+    'lg': 1024px,
+    'xl': 1280px,
+    'xxl': 1536px
+);
+
+// Container widths
+$container-widths: (
+    'sm': 640px,
+    'md': 768px,
+    'lg': 1024px,
+    'xl': 1280px,
+    'xxl': 1400px
+);

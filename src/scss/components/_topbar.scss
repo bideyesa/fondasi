@@ -1,0 +1,155 @@
+@use '../abstracts/variables' as *;
+
+// ══════════════════════════════════════════════
+// Topbar — Fixed/Sticky App Header Bar
+// ══════════════════════════════════════════════
+
+.topbar {
+    display: flex;
+    align-items: center;
+    padding: 0 var(--space-6);
+    height: 60px;
+    background-color: var(--color-surface);
+    border-bottom: 1px solid var(--color-border-subtle);
+    gap: var(--space-4);
+}
+
+.topbar-left {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    flex: 1;
+    min-width: 0;
+}
+
+.topbar-right {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    flex-shrink: 0;
+}
+
+.topbar-center {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    flex: 1;
+    justify-content: center;
+}
+
+.topbar-title {
+    font-size: var(--text-md);
+    font-weight: var(--font-weight-semi);
+    color: var(--color-text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+// Icon button inside topbar
+.topbar-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: none;
+    background: transparent;
+    color: var(--color-text-3);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    position: relative;
+    flex-shrink: 0;
+    text-decoration: none;
+
+    &:hover {
+        background: var(--color-surface-2);
+        color: var(--color-text);
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--color-brand-default);
+        outline-offset: -2px;
+    }
+
+    svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+// Notification / badge indicator on topbar-btn
+.topbar-badge {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 8px;
+    height: 8px;
+    background: var(--color-danger);
+    border-radius: 50%;
+    border: 2px solid var(--color-surface);
+}
+
+.topbar-badge-count {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    min-width: 16px;
+    height: 16px;
+    padding: 0 4px;
+    background: var(--color-danger);
+    color: white;
+    border-radius: var(--radius-full);
+    font-size: 10px;
+    font-weight: var(--font-weight-semi);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--color-surface);
+    line-height: 1;
+}
+
+// Vertical divider between sections
+.topbar-divider {
+    width: 1px;
+    height: 20px;
+    background: var(--color-border-default);
+    flex-shrink: 0;
+}
+
+// Sticky variant
+.topbar-sticky {
+    position: sticky;
+    top: 0;
+    z-index: var(--z-sticky);
+}
+
+// Elevated (shadow instead of border)
+.topbar-elevated {
+    border-bottom: none;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+// Dark variant
+.topbar-dark {
+    background-color: var(--color-brand-darker);
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+
+    .topbar-title {
+        color: white;
+    }
+
+    .topbar-btn {
+        color: rgba(255, 255, 255, 0.7);
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+    }
+
+    .topbar-divider {
+        background: rgba(255, 255, 255, 0.15);
+    }
+}

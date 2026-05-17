@@ -1,0 +1,112 @@
+@use '../abstracts/variables' as *;
+
+// ══════════════════════════════════════════════
+// Position
+// ══════════════════════════════════════════════
+
+.pos-static {
+    position: static;
+}
+
+.pos-relative {
+    position: relative;
+}
+
+.pos-absolute {
+    position: absolute;
+}
+
+.pos-fixed {
+    position: fixed;
+}
+
+.pos-sticky {
+    position: sticky;
+}
+
+.pos-fixed-full {
+    position: fixed;
+    inset: 0;
+}
+
+.pos-absolute-full {
+    position: absolute;
+    inset: 0;
+}
+
+.pos-relative-full {
+    position: relative;
+    inset: 0;
+}
+
+// Top / Right / Bottom / Left
+@each $dir in top, right, bottom, left {
+    @each $key, $value in $spacing {
+        .#{$dir}-#{$key} {
+            #{$dir}: $value;
+        }
+    }
+    .#{$dir}-auto {
+        #{$dir}: auto;
+    }
+    .#{$dir}-0 {
+        #{$dir}: 0;
+    }
+}
+
+// Inset (shorthand for all sides)
+.inset-0 {
+    inset: 0;
+}
+
+.inset-auto {
+    inset: auto;
+}
+
+@each $key, $value in $spacing {
+    .inset-#{$key} {
+        inset: $value;
+    }
+}
+
+// Inset X / Y
+.inset-x-0 {
+    left: 0;
+    right: 0;
+}
+
+.inset-x-auto {
+    left: auto;
+    right: auto;
+}
+
+@each $key, $value in $spacing {
+    .inset-x-#{$key} {
+        left: $value;
+        right: $value;
+    }
+}
+
+.inset-y-0 {
+    top: 0;
+    bottom: 0;
+}
+
+.inset-y-auto {
+    top: auto;
+    bottom: auto;
+}
+
+@each $key, $value in $spacing {
+    .inset-y-#{$key} {
+        top: $value;
+        bottom: $value;
+    }
+}
+
+// Z-Index
+@each $key, $value in $z-index {
+    .z-#{$key} {
+        z-index: $value;
+    }
+}

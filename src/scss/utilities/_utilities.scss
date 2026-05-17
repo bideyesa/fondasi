@@ -1,0 +1,528 @@
+@use '../abstracts/variables' as *;
+@use 'color';
+@use 'display';
+@use 'interaction';
+@use 'object';
+@use 'overflow';
+@use 'responsive';
+@use 'sizing';
+@use 'spacing';
+@use 'print';
+
+// ══════════════════════════════════════════════
+// Utilities - Additional
+// ══════════════════════════════════════════════
+
+// ══════════════════════════════════════════════
+// Transitions
+// ══════════════════════════════════════════════
+
+.transition-none {
+    transition: none;
+}
+
+.transition-all {
+    transition: all var(--transition-base);
+}
+
+.transition-colors {
+    transition: color var(--transition-base), background-color var(--transition-base), border-color var(--transition-base);
+}
+
+.transition-opacity {
+    transition: opacity var(--transition-base);
+}
+
+.transition-transform {
+    transition: transform var(--transition-base);
+}
+
+.transition-shadow {
+    transition: box-shadow var(--transition-base);
+}
+
+.transition-fast {
+    transition-duration: var(--duration-fast);
+}
+
+.transition-base {
+    transition-duration: var(--duration-base);
+}
+
+.transition-slow {
+    transition-duration: var(--duration-slow);
+}
+
+.transition-slower {
+    transition-duration: var(--duration-slower);
+}
+
+// Transition Ease
+.ease-default {
+    transition-timing-function: var(--ease-default);
+}
+
+.ease-in {
+    transition-timing-function: var(--ease-in);
+}
+
+.ease-out {
+    transition-timing-function: var(--ease-out);
+}
+
+.ease-in-out {
+    transition-timing-function: var(--ease-in-out);
+}
+
+// ══════════════════════════════════════════════
+// Transforms
+// ══════════════════════════════════════════════
+
+.transform-none {
+    transform: none;
+}
+
+.transform-origin-center {
+    transform-origin: center;
+}
+
+.transform-origin-top {
+    transform-origin: top;
+}
+
+.transform-origin-top-right {
+    transform-origin: top right;
+}
+
+.transform-origin-right {
+    transform-origin: right;
+}
+
+.transform-origin-bottom-right {
+    transform-origin: bottom right;
+}
+
+.transform-origin-bottom {
+    transform-origin: bottom;
+}
+
+.transform-origin-bottom-left {
+    transform-origin: bottom left;
+}
+
+.transform-origin-left {
+    transform-origin: left;
+}
+
+.transform-origin-top-left {
+    transform-origin: top left;
+}
+
+// Scale
+.scale-0 {
+    transform: scale(0);
+}
+
+.scale-50 {
+    transform: scale(0.5);
+}
+
+.scale-75 {
+    transform: scale(0.75);
+}
+
+.scale-90 {
+    transform: scale(0.9);
+}
+
+.scale-95 {
+    transform: scale(0.95);
+}
+
+.scale-100 {
+    transform: scale(1);
+}
+
+.scale-105 {
+    transform: scale(1.05);
+}
+
+.scale-110 {
+    transform: scale(1.1);
+}
+
+.scale-125 {
+    transform: scale(1.25);
+}
+
+.scale-150 {
+    transform: scale(1.5);
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+// Rotate
+.rotate-0 {
+    transform: rotate(0deg);
+}
+
+.rotate-45 {
+    transform: rotate(45deg);
+}
+
+.rotate-90 {
+    transform: rotate(90deg);
+}
+
+.rotate-135 {
+    transform: rotate(135deg);
+}
+
+.rotate-180 {
+    transform: rotate(180deg);
+}
+
+.rotate-270 {
+    transform: rotate(270deg);
+}
+
+.rotate-360 {
+    transform: rotate(360deg);
+}
+
+// Translate
+.translate-x-0 {
+    transform: translateX(0);
+}
+
+.translate-x-1 {
+    transform: translateX(var(--space-1));
+}
+
+.translate-x-2 {
+    transform: translateX(var(--space-2));
+}
+
+.translate-x-4 {
+    transform: translateX(var(--space-4));
+}
+
+.translate-y-0 {
+    transform: translateY(0);
+}
+
+.translate-y-1 {
+    transform: translateY(var(--space-1));
+}
+
+.translate-y-2 {
+    transform: translateY(var(--space-2));
+}
+
+.translate-y-4 {
+    transform: translateY(var(--space-4));
+}
+
+// Skew
+.skew-x-0 {
+    transform: skewX(0deg);
+}
+
+.skew-x-3 {
+    transform: skewX(3deg);
+}
+
+.skew-x-6 {
+    transform: skewX(6deg);
+}
+
+.skew-x-12 {
+    transform: skewX(12deg);
+}
+
+.skew-y-0 {
+    transform: skewY(0deg);
+}
+
+.skew-y-3 {
+    transform: skewY(3deg);
+}
+
+.skew-y-6 {
+    transform: skewY(6deg);
+}
+
+.skew-y-12 {
+    transform: skewY(12deg);
+}
+
+// ══════════════════════════════════════════════
+// Animation
+// ══════════════════════════════════════════════
+
+.animate-none {
+    animation: none;
+}
+
+.animate-spin {
+    animation: spin 1s linear infinite;
+}
+
+.animate-ping {
+    animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-bounce {
+    animation: bounce 1s infinite;
+}
+
+.animate-shake {
+    animation: shake 0.5s ease-in-out infinite;
+}
+
+.animate-fade-in {
+    animation: fade-in 0.3s ease-out;
+}
+
+.animate-fade-out {
+    animation: fade-out 0.3s ease-out;
+}
+
+.animate-slide-in-up {
+    animation: slide-in-up 0.3s ease-out;
+}
+
+.animate-slide-in-down {
+    animation: slide-in-down 0.3s ease-out;
+}
+
+.animate-slide-in-left {
+    animation: slide-in-left 0.3s ease-out;
+}
+
+.animate-slide-in-right {
+    animation: slide-in-right 0.3s ease-out;
+}
+
+// Animation Keyframes
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes ping {
+    75%, 100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(-25%);
+        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+    50% {
+        transform: translateY(0);
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-4px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(4px);
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes slide-in-up {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-down {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-left {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-right {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+// Animation Duration
+.duration-fast {
+    animation-duration: 80ms;
+}
+
+.duration-base {
+    animation-duration: 150ms;
+}
+
+.duration-slow {
+    animation-duration: 250ms;
+}
+
+.duration-slower {
+    animation-duration: 400ms;
+}
+
+// Animation Delay
+.delay-0 {
+    animation-delay: 0ms;
+}
+
+.delay-75 {
+    animation-delay: 75ms;
+}
+
+.delay-100 {
+    animation-delay: 100ms;
+}
+
+.delay-150 {
+    animation-delay: 150ms;
+}
+
+.delay-200 {
+    animation-delay: 200ms}
+
+.delay-300 {
+    animation-delay: 300ms;
+}
+
+.delay-500 {
+    animation-delay: 500ms;
+}
+
+.delay-700 {
+    animation-delay: 700ms;
+}
+
+.delay-1000 {
+    animation-delay: 1000ms;
+}
+
+// Animation Iteration
+.animate-once {
+    animation-iteration-count: 1;
+}
+
+.animate-twice {
+    animation-iteration-count: 2;
+}
+
+.animate-infinite {
+    animation-iteration-count: infinite;
+}
+
+// Animation Direction
+.animate-normal {
+    animation-direction: normal;
+}
+
+.animate-reverse {
+    animation-direction: reverse;
+}
+
+.animate-alternate {
+    animation-direction: alternate;
+}
+
+.animate-alternate-reverse {
+    animation-direction: alternate-reverse;
+}
+
+// Animation Fill
+.animate-fill-none {
+    animation-fill-mode: none;
+}
+
+.animate-fill-forwards {
+    animation-fill-mode: forwards;
+}
+
+.animate-fill-backwards {
+    animation-fill-mode: backwards;
+}
+
+.animate-fill-both {
+    animation-fill-mode: both;
+}
+
+// Animation Play State
+.animate-running {
+    animation-play-state: running;
+}
+
+.animate-paused {
+    animation-play-state: paused;
+}

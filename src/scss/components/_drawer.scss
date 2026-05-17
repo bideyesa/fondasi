@@ -1,0 +1,154 @@
+@use '../abstracts/variables' as *;
+
+// ══════════════════════════════════════════════
+// Drawer - Professional, Compact
+// ══════════════════════════════════════════════
+
+.drawer-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: var(--z-overlay);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-base);
+}
+
+.drawer-overlay-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.drawer {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    background-color: var(--color-surface);
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    flex-direction: column;
+    z-index: var(--z-modal);
+    transition: transform var(--transition-base);
+}
+
+// Drawer Positions
+.drawer-start {
+    left: 0;
+    width: 280px;
+    transform: translateX(-100%);
+}
+
+.drawer-end {
+    right: 0;
+    width: 280px;
+    transform: translateX(100%);
+}
+
+.drawer-top {
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 280px;
+    transform: translateY(-100%);
+}
+
+.drawer-bottom {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 280px;
+    transform: translateY(100%);
+}
+
+.drawer-overlay-open .drawer-start,
+.drawer-overlay-open .drawer-end,
+.drawer-overlay-open .drawer-top,
+.drawer-overlay-open .drawer-bottom {
+    transform: translate(0);
+}
+
+// Drawer Sizes
+.drawer-sm {
+    width: 240px;
+}
+
+.drawer-lg {
+    width: 360px;
+}
+
+.drawer-xl {
+    width: 480px;
+}
+
+.drawer-full {
+    width: 100%;
+}
+
+.drawer-top-sm,
+.drawer-bottom-sm {
+    height: 200px;
+}
+
+.drawer-top-lg,
+.drawer-bottom-lg {
+    height: 360px;
+}
+
+// Drawer Header
+.drawer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-4) var(--space-5);
+    border-bottom: 1px solid var(--color-border-subtle);
+    flex-shrink: 0;
+}
+
+.drawer-title {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-semi);
+    color: var(--color-text-default);
+    margin: 0;
+}
+
+.drawer-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    color: var(--color-text-3);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    border: none;
+    background: none;
+
+    &:hover {
+        background-color: var(--color-surface-2);
+        color: var(--color-text-default);
+    }
+}
+
+// Drawer Body
+.drawer-body {
+    flex: 1;
+    padding: var(--space-5);
+    overflow-y: auto;
+}
+
+// Drawer Footer
+.drawer-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--space-3);
+    padding: var(--space-4) var(--space-5);
+    border-top: 1px solid var(--color-border-subtle);
+    flex-shrink: 0;
+}
+
+// Prevent body scroll when drawer is open
+.drawer-open {
+    overflow: hidden;
+}

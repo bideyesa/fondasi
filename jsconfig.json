@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "target": "ES2020",
+        "module": "ESNext",
+        "moduleResolution": "bundler",
+        "ignoreDeprecations": "6.0",
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["src/*"],
+            "@js/*": ["src/js/*"],
+            "@scss/*": ["src/scss/*"],
+            "@components/*": ["src/js/components/*"],
+            "@core/*": ["src/js/core/*"]
+        }
+    },
+    "include": ["src/**/*"],
+    "exclude": ["node_modules", "dist"]
+}

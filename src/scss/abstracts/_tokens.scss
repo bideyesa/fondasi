@@ -1,0 +1,51 @@
+@use 'sass:map';
+@use 'mixins' as *;
+@use 'variables' as *;
+
+:root {
+    // Colors
+    @include generate-from-map($navy, 'navy');
+    @include generate-from-map($neutral, 'neutral');
+
+    // Semantic colors
+    @each $name, $types in $semantic {
+        --color-#{$name}:        #{map.get($types, 'default')};
+        --color-#{$name}-bg:     #{map.get($types, 'bg')};
+        --color-#{$name}-text:   #{map.get($types, 'text')};
+        --color-#{$name}-border: #{map.get($types, 'border')};
+    }
+
+    // Surface
+    @each $name, $value in $surface {
+        --color-#{$name}: #{$value};
+    }
+
+    // Border
+    @include generate-from-map($border-colors, 'color-border');
+
+    // Text
+    @include generate-from-map($text-colors, 'color-text');
+
+    // Brand
+    @include generate-from-map($brand, 'color-brand');
+
+    // Typography
+    @include generate-from-map($font-families, 'font');
+    @include generate-from-map($font-sizes, 'text');
+    @include generate-from-map($line-heights, 'leading');
+    @include generate-from-map($letter-spacing, 'tracking');
+    @include generate-from-map($font-weights, 'font-weight');
+
+    // Spacing
+    @include generate-from-map($spacing, 'space');
+    @include generate-from-map($radius, 'radius');
+
+    // Elevation
+    @include generate-from-map($shadows, 'shadow');
+    @include generate-from-map($z-index, 'z');
+
+    // Motion
+    @include generate-from-map($transitions, 'transition');
+    @include generate-from-map($durations, 'duration');
+    @include generate-from-map($easings, 'ease');
+}

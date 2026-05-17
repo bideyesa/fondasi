@@ -1,0 +1,151 @@
+// ══════════════════════════════════════════════
+// Cursor
+// ══════════════════════════════════════════════
+
+.cursor-auto {
+    cursor: auto;
+}
+
+.cursor-default {
+    cursor: default;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.cursor-wait {
+    cursor: wait;
+}
+
+.cursor-text {
+    cursor: text;
+}
+
+.cursor-move {
+    cursor: move;
+}
+
+.cursor-help {
+    cursor: help;
+}
+
+.cursor-not-allowed {
+    cursor: not-allowed;
+}
+
+.cursor-none {
+    cursor: none;
+}
+
+.cursor-grab {
+    cursor: grab;
+}
+
+.cursor-grabbing {
+    cursor: grabbing;
+}
+
+// ══════════════════════════════════════════════
+// Pointer Events
+// ══════════════════════════════════════════════
+
+.pointer-events-auto {
+    pointer-events: auto;
+}
+
+.pointer-events-none {
+    pointer-events: none;
+}
+
+// ══════════════════════════════════════════════
+// Visibility
+// ══════════════════════════════════════════════
+
+.visible {
+    visibility: visible;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.collapse {
+    visibility: collapse;
+}
+
+// ══════════════════════════════════════════════
+// Select
+// ══════════════════════════════════════════════
+
+.select-none {
+    user-select: none;
+}
+
+.select-text {
+    user-select: text;
+}
+
+.select-all {
+    user-select: all;
+}
+
+.select-auto {
+    user-select: auto;
+}
+
+// ══════════════════════════════════════════════
+// White Space
+// ══════════════════════════════════════════════
+
+.whitespace-normal {
+    white-space: normal;
+}
+
+.whitespace-nowrap {
+    white-space: nowrap;
+}
+
+.whitespace-pre {
+    white-space: pre;
+}
+
+.whitespace-pre-line {
+    white-space: pre-line;
+}
+
+.whitespace-pre-wrap {
+    white-space: pre-wrap;
+}
+
+// ══════════════════════════════════════════════
+// Word Break
+// ══════════════════════════════════════════════
+
+.break-normal {
+    overflow-wrap: normal;
+    word-break: normal;
+}
+
+.break-words {
+    overflow-wrap: break-word;
+}
+
+.break-all {
+    word-break: break-all;
+}
+
+.truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// Text Overflow
+.text-overflow-clip {
+    text-overflow: clip;
+}
+
+.text-overflow-ellipsis {
+    text-overflow: ellipsis;
+}

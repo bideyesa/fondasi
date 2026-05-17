@@ -1,0 +1,144 @@
+@use '../abstracts/variables' as *;
+
+// ══════════════════════════════════════════════
+// Modal - Professional, Minimalist
+// ══════════════════════════════════════════════
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-4);
+    z-index: var(--z-modal);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-base);
+}
+
+.modal-overlay-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal {
+    width: 100%;
+    max-width: 500px;
+    max-height: calc(100vh - var(--space-8));
+    background-color: var(--color-surface);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    flex-direction: column;
+    transform: scale(0.95) translateY(10px);
+    transition: transform var(--transition-base);
+}
+
+.modal-overlay-open .modal {
+    transform: scale(1) translateY(0);
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-4) var(--space-5);
+    border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.modal-title {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-semi);
+    color: var(--color-text-default);
+    margin: 0;
+}
+
+.modal-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    color: var(--color-text-3);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    border: none;
+    background: none;
+
+    &:hover {
+        background-color: var(--color-surface-2);
+        color: var(--color-text-default);
+    }
+}
+
+.modal-body {
+    flex: 1;
+    padding: var(--space-5);
+    overflow-y: auto;
+}
+
+.modal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--space-3);
+    padding: var(--space-4) var(--space-5);
+    border-top: 1px solid var(--color-border-subtle);
+}
+
+// Modal Sizes
+.modal-sm {
+    max-width: 360px;
+}
+
+.modal-lg {
+    max-width: 640px;
+}
+
+.modal-xl {
+    max-width: 800px;
+}
+
+.modal-full {
+    max-width: calc(100vw - var(--space-6));
+    max-height: calc(100vh - var(--space-6));
+}
+
+// Modal Position
+.modal-center {
+    .modal-overlay {
+        align-items: center;
+    }
+}
+
+.modal-top {
+    .modal-overlay {
+        align-items: flex-start;
+        padding-top: var(--space-6);
+    }
+
+    .modal {
+        margin: 0 auto;
+    }
+}
+
+// Modal Animation
+.modal-fade {
+    .modal {
+        transform: translateY(20px);
+    }
+}
+
+.modal-zoom {
+    .modal {
+        transform: scale(0.9);
+    }
+}
+
+// Prevent body scroll when modal is open
+.modal-open {
+    overflow: hidden;
+}

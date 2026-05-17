@@ -1,0 +1,104 @@
+@use 'sass:map';
+@use 'sass:math';
+@use 'variables' as *;
+
+// ══════════════════════════════════════════════
+// Functions
+// ══════════════════════════════════════════════
+
+// Get value from map
+@function get($map, $key) {
+    @return map.get($map, $key);
+}
+
+// Get color from semantic map
+@function color($name, $type: 'default') {
+    $colors: map.get($semantic, $name);
+    @if $colors {
+        @return map.get($colors, $type);
+    }
+    @return null;
+}
+
+// Get spacing value
+@function spacing($key) {
+    @return map.get($spacing, $key);
+}
+
+// Get radius value
+@function radius($key) {
+    @return map.get($radius, $key);
+}
+
+// Get shadow value
+@function shadow($key) {
+    @return map.get($shadows, $key);
+}
+
+// Get z-index value
+@function z-index($key) {
+    @return map.get($z-index, $key);
+}
+
+// Get transition value
+@function transition($key) {
+    @return map.get($transitions, $key);
+}
+
+// Get font size
+@function font-size($key) {
+    @return map.get($font-sizes, $key);
+}
+
+// Get font weight
+@function font-weight($key) {
+    @return map.get($font-weights, $key);
+}
+
+// Get line height
+@function line-height($key) {
+    @return map.get($line-heights, $key);
+}
+
+// Calculate REM from PX
+@function rem($px) {
+    @if math.is-unitless($px) {
+        @return math.div($px, 16) * 1rem;
+    }
+    @return $px;
+}
+
+// Calculate EM from PX
+@function em($px, $base: 16) {
+    @if math.is-unitless($px) {
+        @return math.div($px, $base) * 1em;
+    }
+    @return $px;
+}
+
+// Calculate CLAMP
+@function clamp-fluid($min-size, $max-size, $min-width: 640px, $max-width: 1280px) {
+    $slope: math.div($max-size - $min-size, $max-width - $min-width);
+    $y-intercept: -($min-width * $slope) + $min-size;
+
+    @return clamp(
+        #{$min-size},
+        #{$y-intercept}rem + #{$slope * 100}vw,
+        #{$max-size}
+    );
+}
+
+// Color contrast (light or dark)
+@function contrast($color) {
+    $lightness: lightness($color);
+    @if $lightness > 50% {
+        @return 'dark';
+    } @else {
+        @return 'light';
+    }
+}
+
+// Blend colors
+@function blend($color, $background, $opacity) {
+    @return mix($color, $background, $opacity * 100%);
+}

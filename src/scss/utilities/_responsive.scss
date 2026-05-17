@@ -1,0 +1,122 @@
+@use '../abstracts/variables' as *;
+
+// ══════════════════════════════════════════════
+// Responsive Breakpoints
+// ══════════════════════════════════════════════
+
+@each $bp-name, $bp-value in $breakpoints {
+    @media (min-width: $bp-value) {
+        // Flex
+        .#{$bp-name}-flex-row {
+            flex-direction: row;
+        }
+
+        .#{$bp-name}-flex-col {
+            flex-direction: column;
+        }
+
+        .#{$bp-name}-justify-between {
+            justify-content: space-between;
+        }
+
+        .#{$bp-name}-justify-center {
+            justify-content: center;
+        }
+
+        .#{$bp-name}-items-center {
+            align-items: center;
+        }
+
+        .#{$bp-name}-flex-1 {
+            flex: 1 1 0%;
+        }
+
+        // Grid
+        .#{$bp-name}-grid-cols-1 {
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+        }
+
+        .#{$bp-name}-grid-cols-2 {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .#{$bp-name}-grid-cols-3 {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .#{$bp-name}-grid-cols-4 {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+
+        // Gap
+        .#{$bp-name}-gap-0 {
+            gap: 0;
+        }
+
+        @each $key, $value in $spacing {
+            .#{$bp-name}-gap-#{$key} {
+                gap: $value;
+            }
+        }
+
+        // Spacing
+        @each $key, $value in $spacing {
+            .#{$bp-name}-p-#{$key} {
+                padding: $value;
+            }
+
+            .#{$bp-name}-m-#{$key} {
+                margin: $value;
+            }
+
+            .#{$bp-name}-mx-#{$key} {
+                margin-left: $value;
+                margin-right: $value;
+            }
+
+            .#{$bp-name}-my-#{$key} {
+                margin-top: $value;
+                margin-bottom: $value;
+            }
+        }
+
+        // Display
+        .#{$bp-name}-d-none {
+            display: none;
+        }
+
+        .#{$bp-name}-d-block {
+            display: block;
+        }
+
+        .#{$bp-name}-d-flex {
+            display: flex;
+        }
+
+        .#{$bp-name}-d-grid {
+            display: grid;
+        }
+
+        // Width
+        .#{$bp-name}-w-full {
+            width: 100%;
+        }
+
+        // Position
+        .#{$bp-name}-pos-relative {
+            position: relative;
+        }
+
+        .#{$bp-name}-pos-absolute {
+            position: absolute;
+        }
+
+        .#{$bp-name}-pos-fixed {
+            position: fixed;
+        }
+
+        .#{$bp-name}-pos-sticky {
+            position: sticky;
+        }
+    }
+}

@@ -1,0 +1,47 @@
+// ══════════════════════════════════════════════
+// Print
+// ══════════════════════════════════════════════
+
+@media print {
+    .print-d-none {
+        display: none;
+    }
+
+    .print-d-block {
+        display: block;
+    }
+
+    .print-d-flex {
+        display: flex;
+    }
+
+    .print-d-inline {
+        display: inline;
+    }
+
+    .print-d-inline-block {
+        display: inline-block;
+    }
+
+    .print-w-full {
+        width: 100%;
+    }
+
+    .print-h-full {
+        height: 100%;
+    }
+
+    .print-overflow-visible {
+        overflow: visible;
+    }
+
+    .print-break-normal {
+        overflow-wrap: normal;
+        word-break: normal;
+    }
+
+    .print-text-break {
+        overflow-wrap: break-word;
+        word-break: break-word;
+    }
+}

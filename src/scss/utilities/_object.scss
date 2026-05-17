@@ -1,0 +1,309 @@
+@use '../abstracts/variables' as *;
+
+// ══════════════════════════════════════════════
+// Object Fit & Position
+// ══════════════════════════════════════════════
+
+.object-contain {
+    object-fit: contain;
+}
+
+.object-cover {
+    object-fit: cover;
+}
+
+.object-fill {
+    object-fit: fill;
+}
+
+.object-none {
+    object-fit: none;
+}
+
+.object-scale-down {
+    object-fit: scale-down;
+}
+
+// Object Position
+.object-bottom {
+    object-position: bottom;
+}
+
+.object-center {
+    object-position: center;
+}
+
+.object-left {
+    object-position: left;
+}
+
+.object-left-bottom {
+    object-position: left bottom;
+}
+
+.object-left-top {
+    object-position: left top;
+}
+
+.object-right {
+    object-position: right;
+}
+
+.object-right-bottom {
+    object-position: right bottom;
+}
+
+.object-right-top {
+    object-position: right top;
+}
+
+.object-top {
+    object-position: top;
+}
+
+// ══════════════════════════════════════════════
+// List Style
+// ══════════════════════════════════════════════
+
+.list-disc {
+    list-style-type: disc;
+}
+
+.list-decimal {
+    list-style-type: decimal;
+}
+
+.list-none {
+    list-style-type: none;
+}
+
+.list-square {
+    list-style-type: square;
+}
+
+.list-circle {
+    list-style-type: circle;
+}
+
+// List Position
+.list-inside {
+    list-style-position: inside;
+}
+
+.list-outside {
+    list-style-position: outside;
+}
+
+// ══════════════════════════════════════════════
+// Counter Reset & Increment
+// ══════════════════════════════════════════════
+
+.counter-reset-none {
+    counter-reset: none;
+}
+
+.counter-reset {
+    counter-reset: none;
+}
+
+@for $i from 1 through 10 {
+    .counter-reset-#{$i} {
+        counter-reset: counter $i;
+    }
+}
+
+.counter-increment-none {
+    counter-increment: none;
+}
+
+// ══════════════════════════════════════════════
+// Content Visibility
+// ══════════════════════════════════════════════
+
+.content-visible {
+    content-visibility: visible;
+}
+
+.content-auto {
+    content-visibility: auto;
+}
+
+.content-hidden {
+    content-visibility: hidden;
+}
+
+// ══════════════════════════════════════════════
+// Container Type
+// ══════════════════════════════════════════════
+
+.container-normal {
+    container-type: normal;
+}
+
+.container-size {
+    container-type: size;
+}
+
+.container-inline-size {
+    container-type: inline-size;
+}
+
+.container-type {
+    container-type: inline-size;
+}
+
+// ══════════════════════════════════════════════
+// Box Decoration
+// ══════════════════════════════════════════════
+
+.decoration-slice {
+    box-decoration-break: slice;
+}
+
+.decoration-clone {
+    box-decoration-break: clone;
+}
+
+// ══════════════════════════════════════════════
+// Background Blend
+// ══════════════════════════════════════════════
+
+.bg-blend-normal {
+    background-blend-mode: normal;
+}
+
+.bg-blend-multiply {
+    background-blend-mode: multiply;
+}
+
+.bg-blend-screen {
+    background-blend-mode: screen;
+}
+
+.bg-blend-overlay {
+    background-blend-mode: overlay;
+}
+
+.bg-blend-darken {
+    background-blend-mode: darken;
+}
+
+.bg-blend-lighten {
+    background-blend-mode: lighten;
+}
+
+.bg-blend-color-dodge {
+    background-blend-mode: color-dodge;
+}
+
+.bg-blend-color-burn {
+    background-blend-mode: color-burn;
+}
+
+.bg-blend-hard-light {
+    background-blend-mode: hard-light;
+}
+
+.bg-blend-soft-light {
+    background-blend-mode: soft-light;
+}
+
+.bg-blend-difference {
+    background-blend-mode: difference;
+}
+
+.bg-blend-exclusion {
+    background-blend-mode: exclusion;
+}
+
+.bg-blend-hue {
+    background-blend-mode: hue;
+}
+
+.bg-blend-saturation {
+    background-blend-mode: saturation;
+}
+
+.bg-blend-color {
+    background-blend-mode: color;
+}
+
+.bg-blend-luminosity {
+    background-blend-mode: luminosity;
+}
+
+// ══════════════════════════════════════════════
+// Mix Blend
+// ══════════════════════════════════════════════
+
+.mix-blend-normal {
+    mix-blend-mode: normal;
+}
+
+.mix-blend-multiply {
+    mix-blend-mode: multiply;
+}
+
+.mix-blend-screen {
+    mix-blend-mode: screen;
+}
+
+.mix-blend-overlay {
+    mix-blend-mode: overlay;
+}
+
+.mix-blend-darken {
+    mix-blend-mode: darken;
+}
+
+.mix-blend-lighten {
+    mix-blend-mode: lighten;
+}
+
+.mix-blend-color-dodge {
+    mix-blend-mode: color-dodge;
+}
+
+.mix-blend-color-burn {
+    mix-blend-mode: color-burn;
+}
+
+.mix-blend-hard-light {
+    mix-blend-mode: hard-light;
+}
+
+.mix-blend-soft-light {
+    mix-blend-mode: soft-light;
+}
+
+.mix-blend-difference {
+    mix-blend-mode: difference;
+}
+
+.mix-blend-exclusion {
+    mix-blend-mode: exclusion;
+}
+
+.mix-blend-hue {
+    mix-blend-mode: hue;
+}
+
+.mix-blend-saturation {
+    mix-blend-mode: saturation;
+}
+
+.mix-blend-color {
+    mix-blend-mode: color;
+}
+
+.mix-blend-luminosity {
+    mix-blend-mode: luminosity;
+}
+
+.mix-blend-plus-lighter {
+    mix-blend-mode: plus-lighter;
+}
+
+.mix-blend-plus-darker {
+    mix-blend-mode: plus-darker;
+}

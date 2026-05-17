@@ -1,0 +1,202 @@
+@use '../abstracts/variables' as *;
+
+// ══════════════════════════════════════════════
+// Navbar — Horizontal Top Navigation Bar
+// ══════════════════════════════════════════════
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--space-6);
+    height: 64px;
+    background-color: var(--color-surface);
+    border-bottom: 1px solid var(--color-border-subtle);
+    position: relative;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-semi);
+    color: var(--color-brand-default);
+    text-decoration: none;
+    flex-shrink: 0;
+    letter-spacing: -0.01em;
+}
+
+.navbar-logo {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+}
+
+// Center navigation links
+.navbar-menu {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+}
+
+// Individual nav link
+.navbar-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--text-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-2);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    border: none;
+    background: transparent;
+    white-space: nowrap;
+
+    &:hover {
+        color: var(--color-text-default);
+        background-color: var(--color-surface-2);
+    }
+
+    &.active,
+    &.navbar-item-active {
+        color: var(--color-brand-default);
+        background-color: var(--color-brand-light);
+    }
+}
+
+// Right-side actions/utilities
+.navbar-end {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    flex-shrink: 0;
+}
+
+// Hamburger button (mobile)
+.navbar-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: none;
+    background: transparent;
+    color: var(--color-text-3);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+
+    &:hover {
+        background: var(--color-surface-2);
+        color: var(--color-text-default);
+    }
+
+    svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+// Divider between sections
+.navbar-divider {
+    width: 1px;
+    height: 20px;
+    background: var(--color-border-default);
+    flex-shrink: 0;
+    margin: 0 var(--space-1);
+}
+
+// ── Variants ─────────────────────────────────
+
+// Sticky navbar
+.navbar-sticky {
+    position: sticky;
+    top: 0;
+    z-index: var(--z-sticky);
+}
+
+// Elevated (shadow instead of border)
+.navbar-elevated {
+    border-bottom: none;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+// Dark variant
+.navbar-dark {
+    background-color: var(--color-brand-darker);
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+
+    .navbar-brand {
+        color: white;
+    }
+
+    .navbar-item {
+        color: rgba(255, 255, 255, 0.7);
+
+        &:hover {
+            color: white;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        &.active,
+        &.navbar-item-active {
+            color: white;
+            background: rgba(255, 255, 255, 0.12);
+        }
+    }
+
+    .navbar-divider {
+        background: rgba(255, 255, 255, 0.15);
+    }
+
+    .navbar-toggle {
+        color: rgba(255, 255, 255, 0.7);
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+    }
+}
+
+// Bordered variant (stronger border)
+.navbar-bordered {
+    border-bottom-color: var(--color-border-default);
+}
+
+// ── Responsive ───────────────────────────────
+
+@media (max-width: 767px) {
+    .navbar {
+        flex-wrap: wrap;
+        height: auto;
+        padding: var(--space-3) var(--space-4);
+    }
+
+    .navbar-toggle {
+        display: flex;
+    }
+
+    .navbar-menu {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        padding: var(--space-2) 0;
+        gap: 2px;
+
+        &.navbar-menu-open {
+            display: flex;
+        }
+    }
+
+    .navbar-item {
+        justify-content: flex-start;
+        padding: var(--space-2) var(--space-3);
+    }
+}

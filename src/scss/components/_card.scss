@@ -1,0 +1,172 @@
+@use '../abstracts/variables' as *;
+
+// ══════════════════════════════════════════════
+// Card - Professional, Minimalist
+// ══════════════════════════════════════════════
+
+.card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-xs);
+    overflow: hidden;
+}
+
+.card-header {
+    padding: var(--space-4) var(--space-5);
+    border-bottom: 1px solid var(--color-border-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+
+    &:only-child {
+        border-bottom: none;
+    }
+}
+
+.card-body {
+    padding: var(--space-5);
+}
+
+.card-footer {
+    padding: var(--space-4) var(--space-5);
+    border-top: 1px solid var(--color-border-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--space-3);
+    background-color: var(--color-surface-2);
+
+    &:only-child {
+        border-top: none;
+        background-color: transparent;
+    }
+}
+
+.card-title {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-semi);
+    color: var(--color-text-default);
+    margin: 0;
+}
+
+.card-subtitle {
+    font-size: var(--text-sm);
+    color: var(--color-text-3);
+    margin-top: var(--space-1);
+}
+
+.card-description {
+    font-size: var(--text-sm);
+    color: var(--color-text-2);
+    margin-top: var(--space-2);
+    margin-bottom: 0;
+}
+
+// Card Variants
+.card-flat {
+    box-shadow: none;
+    border-color: var(--color-border-default);
+}
+
+.card-elevated {
+    border: none;
+    box-shadow: var(--shadow-md);
+}
+
+.card-borderless {
+    border: none;
+}
+
+.card-dashed {
+    border-style: dashed;
+}
+
+// Card Interactive
+.card-interactive {
+    cursor: pointer;
+    transition: all var(--transition-fast);
+
+    &:hover {
+        border-color: var(--color-border-strong);
+        box-shadow: var(--shadow-sm);
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--color-brand-default);
+        outline-offset: 2px;
+    }
+}
+
+// Card Sizes
+.card-sm {
+    .card-header {
+        padding: var(--space-3) var(--space-4);
+    }
+
+    .card-body {
+        padding: var(--space-4);
+    }
+
+    .card-footer {
+        padding: var(--space-3) var(--space-4);
+    }
+}
+
+.card-lg {
+    .card-header {
+        padding: var(--space-5) var(--space-6);
+    }
+
+    .card-body {
+        padding: var(--space-6);
+    }
+
+    .card-footer {
+        padding: var(--space-5) var(--space-6);
+    }
+}
+
+// Card Image
+.card-image {
+    width: 100%;
+    display: block;
+}
+
+.card-image-top {
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+
+.card-image-bottom {
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+}
+
+// Card Horizontal
+.card-horizontal {
+    display: flex;
+
+    .card-image {
+        width: 40%;
+        object-fit: cover;
+    }
+
+    .card-body {
+        flex: 1;
+    }
+
+    @media (max-width: 767px) {
+        flex-direction: column;
+
+        .card-image {
+            width: 100%;
+            max-height: 180px;
+        }
+    }
+}
+
+// Card Actions
+.card-actions {
+    display: flex;
+    gap: var(--space-2);
+}

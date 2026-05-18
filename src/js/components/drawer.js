@@ -33,7 +33,6 @@ class Drawer {
         this._id = element.id || uid('drawer');
         element.id = this._id;
 
-        // Determine placement from classes
         this._placement = ['drawer-start','drawer-end','drawer-top','drawer-bottom']
             .find(c => element.classList.contains(c))?.replace('drawer-', '') || 'right';
 
@@ -52,7 +51,6 @@ class Drawer {
 
         this._previousFocus = document.activeElement;
 
-        // Create backdrop
         this._overlay = document.createElement('div');
         this._overlay.className = 'drawer-overlay';
         this._overlay.setAttribute('aria-hidden', 'true');

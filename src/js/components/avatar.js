@@ -60,7 +60,6 @@ class Avatar {
         const opts = this._options;
         const el = this._element;
 
-        // Get data attributes as fallback
         const src = opts.src || el.dataset.src || null;
         const initial = opts.initial || el.dataset.initial || '';
         const alt = opts.alt || el.dataset.alt || '';
@@ -68,28 +67,23 @@ class Avatar {
         const variant = opts.variant || el.dataset.variant || null;
         const circle = opts.circle !== undefined ? opts.circle : el.dataset.circle === 'true';
 
-        // Apply circle shape
         if (circle) {
             el.classList.add('avatar-circle');
         }
 
-        // Apply variant
         if (variant) {
             el.classList.add(`avatar-${variant}`);
         }
 
-        // Apply status
         if (status) {
             el.classList.add('avatar-status', `avatar-status-${status}`);
         }
 
-        // Handle image or initial
         if (src) {
             this._loadImage(src, alt);
         } else if (initial) {
             this._setInitial(initial);
         } else {
-            // Show as icon fallback (user icon)
             this._showIconFallback();
         }
     }
@@ -100,7 +94,6 @@ class Avatar {
         img.className = 'avatar-image';
 
         img.onload = () => {
-            // Clear any existing content
             this._element.innerHTML = '';
             this._element.appendChild(img);
             this._element.classList.remove('avatar-initial');
@@ -110,7 +103,6 @@ class Avatar {
         };
 
         img.onerror = () => {
-            // Fallback to initial or icon
             const initial = this._options.initial || this._element.dataset.initial;
             if (initial) {
                 this._setInitial(initial);
@@ -171,24 +163,19 @@ class AvatarGroup {
         const avatars = this.getAvatars();
         const total = avatars.length;
 
-        // Apply size class if specified
         if (this._size) {
             this._container.classList.add(`avatar-group-${this._size}`);
         }
 
-        // Handle overflow
         if (this._overflow && total > this._max) {
-            const visible = avatars.slice(0, this._max);
             const hidden = total - this._max;
 
-            // Hide extra avatars
             avatars.forEach((avatar, idx) => {
                 if (idx >= this._max) {
                     avatar.style.display = 'none';
                 }
             });
 
-            // Add count indicator
             this._createCountIndicator(hidden);
         }
     }

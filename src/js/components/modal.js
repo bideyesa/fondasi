@@ -147,7 +147,6 @@ export function getModal(target, options) {
 
 /* ── Declarative init ───────────────────────────────────────────────── */
 
-// [data-modal-open="modal-id"] triggers
 document.addEventListener('click', e => {
     const trigger = e.target.closest(`[${ATTR_OPEN}]`);
     if (!trigger) return;
@@ -155,7 +154,6 @@ document.addEventListener('click', e => {
     getModal(id)?.open();
 });
 
-// [data-modal-close] inside modal
 document.addEventListener('click', e => {
     const trigger = e.target.closest(`[${ATTR_CLOSE}]`);
     if (!trigger) return;
@@ -163,7 +161,6 @@ document.addEventListener('click', e => {
     if (overlay) getModal(overlay)?.close();
 });
 
-// Auto-register all .modal-overlay elements
 register('.modal-overlay', el => getModal(el));
 
 /* ── Dialog helper ─────────────────────────────────────────────────── */

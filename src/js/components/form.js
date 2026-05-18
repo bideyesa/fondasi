@@ -3,7 +3,7 @@
  * ─────────────────────────────────────────── */
 
 import { $, $$, emit, uid } from '../core/helpers.js';
-import { register }                   from '../core/events.js';
+import { register }          from '../core/events.js';
 
 /* ══════════════════════════════════════════════
    1. FIELD VALIDATION

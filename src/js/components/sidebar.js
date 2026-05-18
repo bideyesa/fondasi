@@ -36,7 +36,6 @@ class Sidebar {
         this._id = element.id || uid('sidebar');
         element.id = this._id;
 
-        // Restore persisted state before anything else
         const persisted = this._persist
             ? localStorage.getItem(`${LS_KEY}:${this._id}`)
             : null;
@@ -45,7 +44,6 @@ class Sidebar {
             ? persisted === 'true'
             : (opts.collapsed || element.classList.contains('collapsed') || false);
 
-        // Set initial state silently
         if (startCollapsed) {
             this._isCollapsed = true;
             element.classList.add('collapsed', 'sidebar-collapsed');
@@ -148,7 +146,6 @@ class Sidebar {
             if (e.target.closest(`[${ATTR_EXPAND}]`))   { e.stopPropagation(); this.expand(); }
         });
 
-        // Sidebar item click — mark active
         if (this._trackActive) {
             this._el.addEventListener('click', (e) => {
                 const item = e.target.closest('.sidebar-item');
@@ -161,7 +158,6 @@ class Sidebar {
             });
         }
 
-        // Global toggle triggers (outside sidebar): [data-sidebar-toggle="sidebar-id"]
         document.addEventListener('click', (e) => {
             const trigger = e.target.closest(`[${ATTR_TOGGLE}]`);
             if (!trigger) return;
@@ -170,11 +166,9 @@ class Sidebar {
             if (!targetId || targetId === this._id) this.toggle();
         });
 
-        // Keyboard — Escape collapses if sidebar is expanded and focused inside it
         this._el.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && !this._isCollapsed) {
                 this.collapse();
-                // Return focus to the first external toggle button if any
                 const toggler = document.querySelector(`[${ATTR_TOGGLE}="${this._id}"]`);
                 toggler?.focus();
             }

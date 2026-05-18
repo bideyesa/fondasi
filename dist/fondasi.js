@@ -3164,7 +3164,6 @@
 			const total = avatars.length;
 			if (this._size) this._container.classList.add(`avatar-group-${this._size}`);
 			if (this._overflow && total > this._max) {
-				avatars.slice(0, this._max);
 				const hidden = total - this._max;
 				avatars.forEach((avatar, idx) => {
 					if (idx >= this._max) avatar.style.display = "none";

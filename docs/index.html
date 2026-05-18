@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fondasi - Design System Documentation</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bideyesa/fondasi@v1.0.0/dist/fondasi.min.css">
+    <link rel="stylesheet" href="../dist/fondasi.min.css">
     <link rel="stylesheet" href="docs.css">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
 </head>
@@ -30,6 +30,7 @@
                 <div class="docs-nav-section">
                     <div class="docs-nav-label">Components</div>
                     <a class="docs-nav-link" data-section="buttons">Buttons</a>
+                    <a class="docs-nav-link" data-section="alert">Alert</a>
                     <a class="docs-nav-link" data-section="form">Form Elements</a>
                     <a class="docs-nav-link" data-section="search-select">Search Select</a>
                     <a class="docs-nav-link" data-section="card">Card</a>
@@ -632,6 +633,115 @@ initComponents();</code></pre>
                         <button class="btn btn-lg btn-primary" data-nusa-button>Large Button</button>
                     </div>
                     <pre><code>&lt;button class="btn btn-lg" data-nusa-button&gt;Large Button&lt;/button&gt;</code></pre>
+                </section>
+
+                <!-- Alert -->
+                <section id="alert" class="docs-section">
+                    <h1>Alert</h1>
+                    <p>Komponen alert untuk menampilkan pesan informasi, peringatan, kesalahan, atau konfirmasi kepada pengguna.</p>
+
+                    <h2>Class Reference</h2>
+                    <table class="token-table">
+                        <thead>
+                            <tr><th>Class</th><th>Keterangan</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><code>.alert</code></td><td>Base alert — wajib digunakan</td></tr>
+                            <tr><td><code>.alert-info</code></td><td>Variant informasi (biru)</td></tr>
+                            <tr><td><code>.alert-success</code></td><td>Variant sukses (hijau)</td></tr>
+                            <tr><td><code>.alert-warning</code></td><td>Variant peringatan (kuning)</td></tr>
+                            <tr><td><code>.alert-danger</code></td><td>Variant bahaya / error (merah)</td></tr>
+                            <tr><td><code>.alert-brand</code></td><td>Variant brand navy</td></tr>
+                            <tr><td><code>.alert-icon</code></td><td>Wrapper ikon di dalam alert</td></tr>
+                            <tr><td><code>.alert-content</code></td><td>Wrapper teks (title + body)</td></tr>
+                            <tr><td><code>.alert-title</code></td><td>Judul alert (bold)</td></tr>
+                            <tr><td><code>.alert-dismiss</code></td><td>Tombol tutup alert</td></tr>
+                            <tr><td><code>.alert-sm</code></td><td>Ukuran kecil</td></tr>
+                            <tr><td><code>.alert-lg</code></td><td>Ukuran besar</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h2>Variants</h2>
+                    <div class="component-preview" style="display:flex;flex-direction:column;gap:10px">
+                        <div class="alert alert-info">Ini adalah pesan informasi.</div>
+                        <div class="alert alert-success">Data berhasil disimpan.</div>
+                        <div class="alert alert-warning">Periksa kembali data sebelum melanjutkan.</div>
+                        <div class="alert alert-danger">Terjadi kesalahan. Silakan coba lagi.</div>
+                        <div class="alert alert-brand">Fitur baru telah tersedia di portal.</div>
+                    </div>
+                    <pre><code>&lt;div class="alert alert-info"&gt;Ini adalah pesan informasi.&lt;/div&gt;
+&lt;div class="alert alert-success"&gt;Data berhasil disimpan.&lt;/div&gt;
+&lt;div class="alert alert-warning"&gt;Periksa kembali data sebelum melanjutkan.&lt;/div&gt;
+&lt;div class="alert alert-danger"&gt;Terjadi kesalahan. Silakan coba lagi.&lt;/div&gt;
+&lt;div class="alert alert-brand"&gt;Fitur baru telah tersedia di portal.&lt;/div&gt;</code></pre>
+
+                    <h2>Dengan Ikon</h2>
+                    <div class="component-preview" style="display:flex;flex-direction:column;gap:10px">
+                        <div class="alert alert-info">
+                            <span class="alert-icon">ℹ</span>
+                            <span>Sesi Anda akan berakhir dalam 5 menit.</span>
+                        </div>
+                        <div class="alert alert-success">
+                            <span class="alert-icon">✓</span>
+                            <span>Pendaftaran berhasil. Silakan cek email Anda.</span>
+                        </div>
+                        <div class="alert alert-danger">
+                            <span class="alert-icon">✕</span>
+                            <span>Email atau password salah.</span>
+                        </div>
+                    </div>
+                    <pre><code>&lt;div class="alert alert-info"&gt;
+    &lt;span class="alert-icon"&gt;ℹ&lt;/span&gt;
+    &lt;span&gt;Sesi Anda akan berakhir dalam 5 menit.&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+
+                    <h2>Dengan Title</h2>
+                    <div class="component-preview" style="display:flex;flex-direction:column;gap:10px">
+                        <div class="alert alert-warning">
+                            <div class="alert-content">
+                                <div class="alert-title">Perhatian</div>
+                                Data yang dihapus tidak dapat dikembalikan.
+                            </div>
+                        </div>
+                        <div class="alert alert-success">
+                            <div class="alert-content">
+                                <div class="alert-title">Berhasil</div>
+                                Laporan telah dikirim ke pimpinan untuk ditinjau.
+                            </div>
+                        </div>
+                    </div>
+                    <pre><code>&lt;div class="alert alert-warning"&gt;
+    &lt;div class="alert-content"&gt;
+        &lt;div class="alert-title"&gt;Perhatian&lt;/div&gt;
+        Data yang dihapus tidak dapat dikembalikan.
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                    <h2>Dengan Tombol Tutup</h2>
+                    <div class="component-preview">
+                        <div class="alert alert-info">
+                            <div class="alert-content">
+                                Pembaruan sistem dijadwalkan pada 20 Mei 2026.
+                            </div>
+                            <button class="alert-dismiss" onclick="this.closest('.alert').remove()" title="Tutup">✕</button>
+                        </div>
+                    </div>
+                    <pre><code>&lt;div class="alert alert-info"&gt;
+    &lt;div class="alert-content"&gt;
+        Pembaruan sistem dijadwalkan pada 20 Mei 2026.
+    &lt;/div&gt;
+    &lt;button class="alert-dismiss" onclick="this.closest('.alert').remove()"&gt;✕&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+
+                    <h2>Ukuran</h2>
+                    <div class="component-preview" style="display:flex;flex-direction:column;gap:10px">
+                        <div class="alert alert-info alert-sm">Alert ukuran kecil.</div>
+                        <div class="alert alert-info">Alert ukuran default.</div>
+                        <div class="alert alert-info alert-lg">Alert ukuran besar.</div>
+                    </div>
+                    <pre><code>&lt;div class="alert alert-info alert-sm"&gt;Alert ukuran kecil.&lt;/div&gt;
+&lt;div class="alert alert-info"&gt;Alert ukuran default.&lt;/div&gt;
+&lt;div class="alert alert-info alert-lg"&gt;Alert ukuran besar.&lt;/div&gt;</code></pre>
                 </section>
 
                 <!-- Form -->
